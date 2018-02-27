@@ -1,0 +1,16 @@
+name: Pages
+modelClass: Yarbala\DbPages\Models\Page
+form: $/yarbala/dbpages/models/page/fields.yaml
+defaultRedirect: yarbala/dbpages/pages
+create:
+    title: 'yarbala.dbpages::lang.dbpages.New_page'
+    redirect: 'yarbala/dbpages/pages/update/:id'
+    redirectClose: yarbala/dbpages/pages
+    flashSave: 'yarbala.dbpages::lang.dbpages.New_page_successfully_created'
+update:
+    title: 'yarbala.dbpages::lang.dbpages.Edit_page'
+    redirect: yarbala/dbpages/pages
+    redirectClose: yarbala/dbpages/pages
+    flashSave: 'yarbala.dbpages::lang.dbpages.Changes_to_page_successfully_saved'
+    flashDelete: 'yarbala.dbpages::lang.dbpages.Page_successfully_deleted'
+preview: {  }

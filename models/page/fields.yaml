@@ -1,0 +1,143 @@
+fields:
+    title:
+        label: 'yarbala.dbpages::lang.dbpages.Title'
+        span: auto
+        type: text
+    parent:
+        label: 'yarbala.dbpages::lang.dbpages.Parent_page'
+        nameFrom: title
+        descriptionFrom: url
+        emptyOption: 'yarbala.dbpages::lang.dbpages.Root'
+        span: auto
+        type: relation
+    url:
+        label: 'yarbala.dbpages::lang.dbpages.Url'
+        span: auto
+        dependsOn:
+            - parent
+            - title
+            - locked
+        type: text
+    locked:
+        label: 'yarbala.dbpages::lang.dbpages.Locked'
+        span: auto
+        type: checkbox
+        comment: 'yarbala.dbpages::lang.dbpages.This_option_locks_page_for_external_changes'
+    enabled:
+        label: 'yarbala.dbpages::lang.dbpages.Enabled'
+        span: auto
+        default: 1
+        type: checkbox
+tabs:
+    fields:
+        content:
+            label: "\_"
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+            form:
+                fields:
+                    content_type:
+                        label: 'yarbala.dbpages::lang.dbpages.Content_type'
+                        options:
+                            string: String
+                            text: Text
+                            md: Markdown
+                            richeditor: 'Rich Editor'
+                            media: Media
+                        span: auto
+                        type: dropdown
+                    content_key:
+                        label: 'yarbala.dbpages::lang.dbpages.Key'
+                        oc.commentPosition: ''
+                        span: auto
+                        type: text
+                    content_string:
+                        label: 'yarbala.dbpages::lang.dbpages.String'
+                        oc.commentPosition: ''
+                        span: full
+                        trigger:
+                            action: show
+                            field: content_type
+                            condition: 'value[string]'
+                        type: text
+                    content_text:
+                        label: 'yarbala.dbpages::lang.dbpages.Text'
+                        size: large
+                        oc.commentPosition: ''
+                        span: full
+                        trigger:
+                            action: show
+                            field: content_type
+                            condition: 'value[text]'
+                        type: textarea
+                    content_markdown:
+                        label: 'yarbala.dbpages::lang.dbpages.Markdown'
+                        size: large
+                        oc.commentPosition: ''
+                        mode: tab
+                        span: full
+                        trigger:
+                            action: show
+                            field: content_type
+                            condition: 'value[md]'
+                        type: markdown
+                    content_richeditor:
+                        label: 'yarbala.dbpages::lang.dbpages.Rich_editor'
+                        size: large
+                        oc.commentPosition: ''
+                        span: full
+                        trigger:
+                            action: show
+                            field: content_type
+                            condition: 'value[richeditor]'
+                        type: richeditor
+                    content_number:
+                        label: 'yarbala.dbpages::lang.dbpages.Number'
+                        oc.commentPosition: ''
+                        span: auto
+                        trigger:
+                            action: show
+                            field: content_type
+                            condition: 'value[number]'
+                        type: number
+                    content_media:
+                        label: 'yarbala.dbpages::lang.dbpages.Media'
+                        oc.commentPosition: ''
+                        mode: file
+                        span: auto
+                        trigger:
+                            action: show
+                            field: content_type
+                            condition: 'value[media]'
+                        type: mediafinder
+        meta_title:
+            label: 'yarbala.dbpages::lang.dbpages.Title'
+            span: full
+            dependsOn:
+                - title
+            type: text
+            tab: 'yarbala.dbpages::lang.dbpages.Meta'
+        meta_description:
+            label: 'yarbala.dbpages::lang.dbpages.Description'
+            size: large
+            span: full
+            type: textarea
+            tab: 'yarbala.dbpages::lang.dbpages.Meta'
+        meta_other:
+            label: 'yarbala.dbpages::lang.dbpages.Other'
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: 'yarbala.dbpages::lang.dbpages.Meta'
+            form:
+                fields:
+                    meta_name:
+                        label: 'yarbala.dbpages::lang.dbpages.Name'
+                        span: auto
+                        type: text
+                    meta_content:
+                        label: 'yarbala.dbpages::lang.dbpages.Content'
+                        span: auto
+                        type: text

@@ -1,0 +1,33 @@
+plugin:
+    name: 'yarbala.dbpages::lang.plugin.name'
+    description: 'yarbala.dbpages::lang.plugin.description'
+    author: yarbala
+    icon: oc-icon-files-o
+    homepage: 'https://yarbala.com/octobercms-db-pages'
+permissions:
+    manage_db_pages:
+        tab: 'yarbala.dbpages::lang.plugin.name'
+        label: 'yarbala.dbpages::lang.dbpages.Manage_DB_Pages'
+    manage_db_page_types:
+        tab: 'yarbala.dbpages::lang.plugin.name'
+        label: 'yarbala.dbpages::lang.Manage_DB_page_types'
+navigation:
+    main-menu-item:
+        label: 'yarbala.dbpages::lang.plugin.name'
+        url: yarbala/dbpages/pages
+        icon: icon-files-o
+        permissions:
+            - manage_db_pages
+        sideMenu:
+            side-menu-item:
+                label: 'yarbala.dbpages::lang.dbpages.Pages'
+                url: yarbala/dbpages/pages
+                icon: icon-files-o
+                permissions:
+                    - manage_db_pages
+            side-menu-page-types:
+                label: 'yarbala.dbpages::lang.dbpages.Page_types'
+                url: yarbala/dbpages/pagetypes
+                icon: icon-edit
+                permissions:
+                    - manage_db_page_types

@@ -1,0 +1,38 @@
+columns:
+    id:
+        label: '#'
+        type: number
+        searchable: true
+        sortable: true
+        width: 10px
+    title:
+        label: 'yarbala.dbpages::lang.dbpages.Title'
+        type: text
+        searchable: true
+        sortable: true
+        width: 200px
+    'type[title]':
+        label: 'yarbala.dbpages::lang.dbpages.Type'
+        type: text
+        width: 100px
+    url:
+        label: 'yarbala.dbpages::lang.dbpages.Url'
+        type: text
+        searchable: true
+        sortable: true
+        width: 200px
+    enabled:
+        label: 'yarbala.dbpages::lang.dbpages.Enabled'
+        type: switch
+        sortable: true
+        width: 10px
+    created_at:
+        label: 'yarbala.dbpages::lang.dbpages.Created'
+        type: datetime
+        sortable: true
+        width: 100px
+    updated_at:
+        label: 'yarbala.dbpages::lang.dbpages.Updated'
+        type: datetime
+        sortable: true
+        width: 100px

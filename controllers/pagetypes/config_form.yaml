@@ -1,0 +1,15 @@
+name: PageTypes
+modelClass: Yarbala\DbPages\Models\PageType
+form: $/yarbala/dbpages/models/pagetype/fields.yaml
+defaultRedirect: yarbala/dbpages/pagetypes
+create:
+    title: 'yarbala.dbpages::lang.dbpages.Create_page_type'
+    redirect: 'yarbala/dbpages/pagetypes/update/:id'
+    redirectClose: yarbala/dbpages/pagetypes
+    flashSave: 'yarbala.dbpages::lang.dbpages.New_page_type_successfully_created'
+update:
+    title: 'yarbala.dbpages::lang.dbpages.Update_page_type'
+    redirect: yarbala/dbpages/pagetypes
+    redirectClose: yarbala/dbpages/pagetypes
+    flashSave: 'yarbala.dbpages::lang.dbpages.Changes_to_page_type_successfully_saved'
+    flashDelete: 'yarbala.dbpages::lang.dbpages.Page_type_successfully_deleted'

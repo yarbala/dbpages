@@ -1,0 +1,112 @@
+fields:
+    title:
+        label: 'yarbala.dbpages::lang.dbpages.Title'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    url_template:
+        label: 'yarbala.dbpages::lang.dbpages.Url_template'
+        span: auto
+        default: '{parent-url}/{title-slug}'
+        type: text
+    source_type:
+        label: 'yarbala.dbpages::lang.dbpages.Source_type'
+        options:
+            content: Content
+            config: Config
+        span: auto
+        type: dropdown
+    content:
+        label: 'yarbala.dbpages::lang.dbpages.Content'
+        prompt: 'Add new item'
+        span: full
+        trigger:
+            action: show
+            field: source_type
+            condition: 'value[content]'
+        type: repeater
+        form:
+            fields:
+                content_type:
+                    label: 'yarbala.dbpages::lang.dbpages.Content_type'
+                    oc.commentPosition: ''
+                    options:
+                        string: String
+                        text: Text
+                        md: Markdown
+                        richeditor: 'Rich Editor'
+                        media: Media
+                    span: auto
+                    type: dropdown
+                content_key:
+                    label: 'yarbala.dbpages::lang.dbpages.Key'
+                    oc.commentPosition: ''
+                    span: auto
+                    type: text
+                content_string:
+                    label: 'yarbala.dbpages::lang.dbpages.String'
+                    oc.commentPosition: ''
+                    span: full
+                    trigger:
+                        action: show
+                        field: content_type
+                        condition: 'value[string]'
+                    type: text
+                content_text:
+                    label: 'yarbala.dbpages::lang.dbpages.Text'
+                    size: large
+                    oc.commentPosition: ''
+                    span: full
+                    trigger:
+                        action: show
+                        field: content_type
+                        condition: 'value[text]'
+                    type: textarea
+                content_markdown:
+                    label: 'yarbala.dbpages::lang.dbpages.Markdown'
+                    size: large
+                    oc.commentPosition: ''
+                    mode: tab
+                    span: full
+                    trigger:
+                        action: show
+                        field: content_type
+                        condition: 'value[md]'
+                    type: markdown
+                content_richeditor:
+                    label: 'yarbala.dbpages::lang.dbpages.Rich_editor'
+                    size: large
+                    oc.commentPosition: ''
+                    span: full
+                    trigger:
+                        action: show
+                        field: content_type
+                        condition: 'value[richeditor]'
+                    type: richeditor
+                content_number:
+                    label: 'yarbala.dbpages::lang.dbpages.Number'
+                    oc.commentPosition: ''
+                    span: auto
+                    trigger:
+                        action: show
+                        field: content_type
+                        condition: 'value[number]'
+                    type: number
+                content_media:
+                    label: 'yarbala.dbpages::lang.dbpages.Media'
+                    oc.commentPosition: ''
+                    mode: file
+                    span: auto
+                    trigger:
+                        action: show
+                        field: content_type
+                        condition: 'value[media]'
+                    type: mediafinder
+    config_file:
+        label: 'yarbala.dbpages::lang.dbpages.Config_file'
+        span: full
+        trigger:
+            action: show
+            field: source_type
+            condition: 'value[config]'
+        type: text

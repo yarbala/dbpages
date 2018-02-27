@@ -1,0 +1,100 @@
+fields:
+    title:
+        label: 'yarbala.dbpages::lang.dbpages.Title'
+        span: auto
+        type: text
+    parent:
+        label: 'yarbala.dbpages::lang.dbpages.Parent_page'
+        nameFrom: title
+        descriptionFrom: url
+        emptyOption: 'yarbala.dbpages::lang.dbpages.Root'
+        span: auto
+        type: relation
+    url:
+        label: 'yarbala.dbpages::lang.dbpages.Url'
+        span: auto
+        dependsOn:
+            - parent
+            - title
+            - locked
+        type: text
+    locked:
+        label: 'yarbala.dbpages::lang.dbpages.Locked'
+        span: auto
+        type: checkbox
+        comment: 'yarbala.dbpages::lang.dbpages.This_option_locks_page_for_external_changes'
+    enabled:
+        label: 'yarbala.dbpages::lang.dbpages.Enabled'
+        span: auto
+        default: 1
+        type: checkbox
+tabs:
+    fields:
+        'content[h1]':
+            label: H1
+            span: auto
+            type: text
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+        'content[text]':
+            label: 'yarbala.dbpages::lang.dbpages.Text'
+            size: small
+            span: full
+            type: textarea
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+        'content[h2_1]':
+            label: 'H2 - 1'
+            span: auto
+            type: text
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+        'content[text1]':
+            label: Text1
+            size: large
+            mode: tab
+            span: full
+            type: markdown
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+        'content[h2_2]':
+            label: 'H2 - 2'
+            span: auto
+            type: text
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+        'content[text2]':
+            label: Text2
+            size: large
+            mode: tab
+            span: full
+            type: markdown
+            tab: 'yarbala.dbpages::lang.dbpages.Content'
+        meta_title:
+            label: 'yarbala.dbpages::lang.dbpages.Title'
+            span: full
+            dependsOn:
+                - title
+            type: text
+            tab: 'yarbala.dbpages::lang.dbpages.Meta'
+        meta_description:
+            label: 'yarbala.dbpages::lang.dbpages.Description'
+            size: large
+            span: full
+            type: textarea
+            tab: 'yarbala.dbpages::lang.dbpages.Meta'
+        meta_other:
+            label: 'yarbala.dbpages::lang.dbpages.Other'
+            prompt: 'Add new item'
+            span: full
+            type: repeater
+            tab: 'yarbala.dbpages::lang.dbpages.Meta'
+            form:
+                fields:
+                    meta_name:
+                        label: 'yarbala.dbpages::lang.dbpages.Name'
+                        span: auto
+                        type: text
+                    meta_content:
+                        label: 'yarbala.dbpages::lang.dbpages.Content'
+                        span: auto
+                        type: text
+
+
+fields:
+

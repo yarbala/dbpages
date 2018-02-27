@@ -1,0 +1,12 @@
+title: 'yarbala.dbpages::lang.dbpages.Page_types'
+modelClass: Yarbala\DbPages\Models\PageType
+list: $/yarbala/dbpages/models/pagetype/columns.yaml
+recordUrl: 'yarbala/dbpages/pagetypes/update/:id'
+noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'

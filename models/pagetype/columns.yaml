@@ -1,0 +1,8 @@
+columns:
+    id:
+        label: '#'
+        type: number
+        width: 10px
+    title:
+        label: 'yarbala.dbpages::lang.dbpages.Title'
+        type: text

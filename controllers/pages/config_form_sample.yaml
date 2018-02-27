@@ -1,0 +1,10 @@
+name: Pages
+form: $/yarbala/dbpages/models/page/sample.yaml
+modelClass: Yarbala\DbPages\Models\Page
+defaultRedirect: yarbala/dbpages/pages
+create:
+    redirect: 'yarbala/dbpages/pages/update/:id'
+    redirectClose: yarbala/dbpages/pages
+update:
+    redirect: yarbala/dbpages/pages
+    redirectClose: yarbala/dbpages/pages
