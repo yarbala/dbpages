@@ -12,8 +12,10 @@ class BuilderTableCreateYarbalaDbpagesPageTypes extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
             $table->string('title');
-            $table->string('key');
-            $table->string('control');
+            $table->string('url_template');
+            $table->string('source_type');
+            $table->text('content');
+            $table->string('config_file')->nullable();
         });
     }
     
